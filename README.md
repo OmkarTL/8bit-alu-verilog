@@ -37,5 +37,31 @@ tb/            -> Testbench files
 - FPGA Design
 - Verilog HDL
 
+## Simulation Waveform Explanation
+
+The waveform simulation verifies the correct functionality of the 8-bit ALU for different select (`SEL`) inputs.  
+Inputs `A = 0F` and `B = 03` were applied, and the ALU performed multiple arithmetic and logical operations based on the select lines.
+
+| SEL | Operation | Output (Y) |
+|-----|------------|-------------|
+| 000 | Addition | 12 |
+| 001 | Subtraction | 0C |
+| 010 | AND | 03 |
+| 011 | OR | 0F |
+| 100 | XOR | 0C |
+| 101 | NOT | F0 |
+| 110 | Left Shift | 1E |
+| 111 | Right Shift | 07 |
+
+### Observation
+- The ALU successfully executed all arithmetic and logical operations.
+- Outputs changed correctly according to the `SEL` input.
+- No undefined states or timing issues were observed during simulation.
+- The design was verified successfully using Vivado Simulator.
+
+## Simulation Waveform
+![Waveform](screenshots/waveform_simulation.png)
+
 ## Author
-Lakshmi Omkareswar Thummagunta
+Lakshmi Omkareswar Thummagunta,
+Adimulam Sriya
