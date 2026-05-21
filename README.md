@@ -62,6 +62,6 @@ Inputs `A = 0F` and `B = 03` were applied, and the ALU performed multiple arithm
 ## Simulation Waveform
 ![Waveform](8bit-alu-verilog/screenshots/waveform_simulation.png)
 
-## Author
+## Authors
 Lakshmi Omkareswar Thummagunta,
 Adimulam Sriya
