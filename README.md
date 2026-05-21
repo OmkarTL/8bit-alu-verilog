@@ -60,7 +60,7 @@ Inputs `A = 0F` and `B = 03` were applied, and the ALU performed multiple arithm
 - The design was verified successfully using Vivado Simulator.
 
 ## Simulation Waveform
-![Waveform](screenshots/waveform_simulation.png)
+![Waveform](8bit-alu-verilog/screenshots/waveform_simulation.png)
 
 ## Author
 Lakshmi Omkareswar Thummagunta,
