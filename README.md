@@ -110,7 +110,7 @@ B = 03
 
 ## Simulation Waveform
 
-![Waveform](8bit-alu-verilog/screenshots/waveform_simulation.png)
+![Waveform](/8bit-alu-verilog/screenshots/waveform_simulation.png)
 
 ---
 
@@ -137,5 +137,5 @@ B = 03
 
 ## Authors
 
-Lakshmi Omkareswar Thummagunta,  
+Lakshmi Omkareswar Thummagunta,
 Sriya Adimulam
