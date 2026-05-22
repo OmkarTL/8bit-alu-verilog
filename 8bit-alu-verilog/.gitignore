@@ -1,6 +1,9 @@
 # Vivado generated files
 *.jou
 *.log
+*.out
+*.vcd
+*.fst
 *.pb
 *.str
 *.bit

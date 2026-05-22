@@ -1,0 +1,24 @@
+name: Verilog CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Icarus Verilog
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y iverilog
+
+      - name: Compile testbench
+        run: iverilog -g2012 -o alu_tb.out 8bit-alu-verilog/src/8bit_alu.v 8bit-alu-verilog/tb/8bit_alu_tb.v
+
+      - name: Run simulation
+        run: vvp alu_tb.out

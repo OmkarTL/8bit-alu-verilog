@@ -65,20 +65,21 @@ The ALU performs multiple arithmetic and logical operations based on a 3-bit sel
 ```txt
 8bit-alu-verilog
 │
-├── constraints
-│   └── 8bit_alu.xdc
-│
-├── src
-│   └── 8bit_alu.v
-│
-├── tb
-│   └── 8bit_alu_tb.v
-│
-├── screenshots
-│   └── waveform_simulation.png
-│
+├── .github
+│   └── workflows
+│       └── verilog-ci.yml
+├── 8bit-alu-verilog
+│   ├── .gitignore
+│   ├── constraints
+│   │   └── 8bit_alu.xdc
+│   ├── screenshots
+│   │   └── waveform_simulation.png
+│   ├── src
+│   │   └── 8bit_alu.v
+│   └── tb
+│       └── 8bit_alu_tb.v
+├── .gitignore
 ├── README.md
-└── .gitignore
 ```
 
 ---
@@ -111,6 +112,23 @@ B = 03
 ## Simulation Waveform
 
 ![Waveform](/8bit-alu-verilog/screenshots/waveform_simulation.png)
+
+---
+
+## Automated CI Simulation
+
+This project includes a GitHub Actions workflow that runs an automated Verilog simulation on every push and pull request.
+
+The workflow uses `ubuntu-latest`, installs Icarus Verilog with `apt`, compiles the ALU design with the testbench, and runs the simulation with `vvp`. The check fails automatically if compilation fails or if the self-checking testbench reports an incorrect output.
+
+To run the same simulation locally on Ubuntu or a similar Linux environment:
+
+```sh
+sudo apt-get update
+sudo apt-get install -y iverilog
+iverilog -g2012 -o alu_tb.out 8bit-alu-verilog/src/8bit_alu.v 8bit-alu-verilog/tb/8bit_alu_tb.v
+vvp alu_tb.out
+```
 
 ---
 
